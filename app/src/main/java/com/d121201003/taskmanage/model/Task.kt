@@ -13,6 +13,7 @@ data class Task (
     val title:String,
     val category:String,
     val description:String,
-    val stats:String
+    val stats:String,
+    val datetime: String
 
 ): Parcelable

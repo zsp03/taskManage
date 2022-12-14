@@ -52,7 +52,7 @@ class AddTaskActivity : AppCompatActivity() {
             }
 
             lifecycleScope.launch {
-                val task = Task(0,title,category, description,"Ongoing")
+                val task = Task(0,title,category, description,"Ongoing", DateTimeUtil.getCurrentDate())
                 taskViewModel.addTask(task)
                 Toast.makeText(this@AddTaskActivity,"Success added task", Toast.LENGTH_SHORT).show()
                 finish()

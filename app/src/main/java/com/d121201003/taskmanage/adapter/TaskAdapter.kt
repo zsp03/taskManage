@@ -24,8 +24,9 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
     private lateinit var taskViewModel: TaskViewModel
     inner class TaskViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         val title: TextView = itemView.findViewById(R.id.judul_task)
-        val category: TextView = itemView.findViewById(R.id.kategori_task)
-        val description: MaterialButton = itemView.findViewById(R.id.deskripsi_task)
+        val category: MaterialButton = itemView.findViewById(R.id.kategori_task)
+        val description: TextView = itemView.findViewById(R.id.deskripsi_task)
+        val datetime: TextView = itemView.findViewById(R.id.datetime)
         val option: ImageView = itemView.findViewById(R.id.opsi_task)
     }
 
@@ -41,6 +42,7 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         holder.title.text = currentTask.title
         holder.category.text = currentTask.category
         holder.description.text = currentTask.description
+        holder.datetime.text = currentTask.datetime
     }
 
     override fun getItemCount(): Int {

@@ -26,29 +26,34 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="JudulTask"
+            android:textSize="16dp"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <ImageView
             android:id="@+id/opsi_task"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/ic_checkcircle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/ic_checkcircle" />
+            app:srcCompat="@drawable/ic_check" />
 
         <TextView
             android:id="@+id/deskripsi_task"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="50dp"
-            app:layout_constraintTop_toBottomOf="@+id/opsi_task"
+            app:layout_constraintTop_toBottomOf="@+id/judul_task"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="DeskripsiTask"
+            android:layout_marginTop="4dp"
+            android:textSize="12dp"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"/>
 
         <TextView
             android:id="@+id/datetime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
             android:text="2020 april 8"
             android:layout_marginStart="4dp"
             app:layout_constraintStart_toEndOf="@+id/judul_task"
@@ -56,13 +61,15 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/kategori_task"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Urgent"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:backgroundTint="@color/md_theme_light_error"
-            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"/>
+            android:text="Tidak Penting Tidak Mendesak"
+            android:textSize="10dp"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
