@@ -1,6 +1,7 @@
 package com.d121201003.taskmanage.adapter
 
 import android.content.Context
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,8 +9,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.d121201003.taskmanage.R
+import com.d121201003.taskmanage.fragments.HistoryFragment
 import com.d121201003.taskmanage.model.Task
 import com.d121201003.taskmanage.viewmodel.TaskViewModel
 import com.google.android.material.button.MaterialButton
@@ -26,7 +29,6 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         val option: ImageView = itemView.findViewById(R.id.opsi_task)
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         context = parent.context
         taskViewModel = ViewModelProvider(context as FragmentActivity)[TaskViewModel::class.java]
@@ -41,7 +43,9 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         holder.description.text = currentTask.description
     }
 
-    override fun getItemCount(): Int = taskList.size
+    override fun getItemCount(): Int {
+        return taskList.size
+    }
 
     fun setData(task:List<Task>){
         this.taskList = task

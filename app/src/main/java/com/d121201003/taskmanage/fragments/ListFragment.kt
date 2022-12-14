@@ -25,8 +25,7 @@ class ListFragment : Fragment() {
 
         val adapterTask = TaskAdapter()
         binding.recyclerTasks.adapter = adapterTask
-        binding.recyclerTasks.layoutManager = LinearLayoutManager(requireContext(),
-            LinearLayoutManager.VERTICAL,false)
+        binding.recyclerTasks.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
 
         taskViewModel.readAllData.observe(viewLifecycleOwner){task->
             adapterTask.setData(task)
