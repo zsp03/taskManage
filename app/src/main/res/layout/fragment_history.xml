@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HistoryFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:clipToPadding="false"
+        android:paddingStart="23dp"
+        android:paddingEnd="23dp"
+        tools:listitem="@layout/list_tasks" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteAllHistory"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_delete"
+        app:tint="@color/md_theme_dark_onError"
+        android:backgroundTint="@color/md_theme_light_onError"
+        android:layout_width="50dp"
+        app:fabCustomSize="50dp"
+        android:layout_height="50dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
