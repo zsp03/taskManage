@@ -3,6 +3,8 @@ package com.d121201003.taskmanage
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.d121201003.taskmanage.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,6 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val navControl = findNavController(R.id.fragment)
+        binding.bottomNavigation.setupWithNavController(navControl)
 
         binding.addButton.setOnClickListener {
             val intent = Intent(this,AddTaskActivity::class.java)
