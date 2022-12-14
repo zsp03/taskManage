@@ -1,6 +1,7 @@
 package com.d121201003.taskmanage.adapter
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
@@ -43,6 +44,22 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
         holder.category.text = currentTask.category
         holder.description.text = currentTask.description
         holder.datetime.text = currentTask.datetime
+
+        when(currentTask.category){
+            "Penting Mendesak"->{
+                holder.category.backgroundTintList = ColorStateList.valueOf(context!!.resources.getColor(R.color.md_theme_light_error))
+            }
+            "Tidak Penting Mendesak"->{
+                holder.category.backgroundTintList = ColorStateList.valueOf(context!!.resources.getColor(R.color.md_theme_dark_onError))
+            }
+            "Penting Tidak Mendesak"->{
+                holder.category.backgroundTintList = ColorStateList.valueOf(context!!.resources.getColor(R.color.md_theme_dark_primary))
+            }
+            "Tidak Penting Tidak Mendesak"->{
+                holder.category.backgroundTintList = ColorStateList.valueOf(context!!.resources.getColor(R.color.md_theme_light_tertiaryContainer))
+            }
+        }
+
     }
 
     override fun getItemCount(): Int {
